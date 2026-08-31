@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 170" font-family="'Source Sans 3',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <!-- connecting line -->
+  <line x1="90" y1="62" x2="770" y2="62" stroke="#d8c2c2" stroke-width="2"/>
+  <g fill="#8C1515">
+    <circle cx="250" cy="62" r="3.5"/><circle cx="450" cy="62" r="3.5"/><circle cx="640" cy="62" r="3.5"/>
+  </g>
+
+  <!-- node 1: constrain -->
+  <circle cx="110" cy="62" r="22" fill="#ffffff" stroke="#8C1515" stroke-width="2.5"/>
+  <circle cx="110" cy="62" r="10" fill="none" stroke="#8C1515" stroke-width="2"/>
+  <circle cx="110" cy="62" r="3" fill="#8C1515"/>
+
+  <!-- node 2: learn -->
+  <circle cx="330" cy="62" r="22" fill="#ffffff" stroke="#8C1515" stroke-width="2.5"/>
+  <g fill="#8C1515">
+    <circle cx="322" cy="55" r="4"/><circle cx="338" cy="55" r="4"/>
+    <circle cx="322" cy="69" r="4"/><circle cx="338" cy="69" r="4"/>
+  </g>
+
+  <!-- node 3: verify -->
+  <circle cx="540" cy="62" r="22" fill="#ffffff" stroke="#8C1515" stroke-width="2.5"/>
+  <path d="M 531 62 l 6 7 l 12 -14" fill="none" stroke="#8C1515" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- node 4: deploy -->
+  <circle cx="750" cy="62" r="22" fill="#8C1515"/>
+  <path d="M 741 70 l 9 -18 l 9 18 l -9 -6 z" fill="#ffffff"/>
+
+  <!-- labels -->
+  <g font-size="15.5" font-weight="700" fill="#1d1d1f" text-anchor="middle">
+    <text x="110" y="110">constrain</text>
+    <text x="330" y="110">learn</text>
+    <text x="540" y="110">verify</text>
+    <text x="750" y="110">deploy</text>
+  </g>
+  <g font-size="12" fill="#86868b" text-anchor="middle">
+    <text x="110" y="130">constraints become</text><text x="110" y="145">design inputs</text>
+    <text x="330" y="130">learning under those</text><text x="330" y="145">constraints</text>
+    <text x="540" y="130">outputs that can be</text><text x="540" y="145">checked</text>
+    <text x="750" y="130">clinics, buildings,</text><text x="750" y="145">platforms, markets</text>
+  </g>
+</svg>

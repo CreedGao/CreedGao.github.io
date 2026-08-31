@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 500" font-family="'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#c98b8b"/></marker></defs>
+
+<text x="510" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#8C1515">Three lines of method, one proving ground.</text>
+<text x="510" y="47" text-anchor="middle" font-size="12.5" fill="#667085">Each line begins from a condition that only shows up once a system leaves the lab.</text>
+
+<rect x="30" y="64" width="960" height="56" rx="10" fill="#faf4f4" stroke="#eddcdc"/>
+<text x="46" y="84" font-size="10" fill="#a89393" letter-spacing="1.2">CONDITIONS THAT DEFINE THE PROBLEM</text>
+<g font-size="12.5" fill="#2b3038">
+  <text x="46" y="106"><tspan font-weight="700" fill="#8C1515">Resources.</tspan> Compute and energy are bounded.</text>
+  <text x="376" y="106"><tspan font-weight="700" fill="#8C1515">Data.</tspan> It stays where it was collected.</text>
+  <text x="700" y="106"><tspan font-weight="700" fill="#8C1515">Outputs.</tspan> A wrong one has a cost.</text>
+</g>
+
+<g stroke="#c98b8b" stroke-width="1.4" marker-end="url(#a)">
+  <line x1="183" y1="124" x2="183" y2="146"/>
+  <line x1="510" y1="124" x2="510" y2="146"/>
+  <line x1="837" y1="124" x2="837" y2="146"/>
+</g>
+
+<rect x="30" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
+<rect x="30" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
+<rect x="30" y="176" width="306" height="12" fill="#8C1515"/>
+<text x="183.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Trustworthy Generation &amp;</text>
+<text x="183.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Agents</text>
+<text x="183.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Make the output itself checkable.</text>
+<circle cx="48" cy="230" r="2.6" fill="#c98b8b"/>
+<text x="60" y="234" font-size="11.5" fill="#2b3038">Verifiable multi-framework code</text>
+<text x="60" y="249" font-size="11.5" fill="#2b3038">generation</text>
+<circle cx="48" cy="264" r="2.6" fill="#c98b8b"/>
+<text x="60" y="268" font-size="11.5" fill="#2b3038">Anatomically grounded clinical reports</text>
+<circle cx="48" cy="290" r="2.6" fill="#c98b8b"/>
+<text x="60" y="294" font-size="11.5" fill="#2b3038">Factuality, LLM-as-judge, evaluation</text>
+<text x="60" y="309" font-size="11.5" fill="#2b3038">infrastructure</text>
+<circle cx="48" cy="324" r="2.6" fill="#c98b8b"/>
+<text x="60" y="328" font-size="11.5" fill="#2b3038">Neuro-symbolic interpretability</text>
+<rect x="357" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
+<rect x="357" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
+<rect x="357" y="176" width="306" height="12" fill="#8C1515"/>
+<text x="510.0" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Alignment at Industrial Scale</text>
+<text x="510.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Test the method where its assumptions break.</text>
+<circle cx="375" cy="230" r="2.6" fill="#c98b8b"/>
+<text x="387" y="234" font-size="11.5" fill="#2b3038">ID and multimodal representation</text>
+<text x="387" y="249" font-size="11.5" fill="#2b3038">alignment</text>
+<circle cx="375" cy="264" r="2.6" fill="#c98b8b"/>
+<text x="387" y="268" font-size="11.5" fill="#2b3038">Distribution shift across scenarios</text>
+<circle cx="375" cy="290" r="2.6" fill="#c98b8b"/>
+<text x="387" y="294" font-size="11.5" fill="#2b3038">Convergence balance and training cost</text>
+<circle cx="375" cy="316" r="2.6" fill="#c98b8b"/>
+<text x="387" y="320" font-size="11.5" fill="#2b3038">Faithful prediction at platform scale</text>
+<rect x="684" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
+<rect x="684" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
+<rect x="684" y="176" width="306" height="12" fill="#8C1515"/>
+<text x="837.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Privacy-Preserving &amp;</text>
+<text x="837.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Efficient Learning</text>
+<text x="837.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Learn where the data and the compute actually are.</text>
+<circle cx="702" cy="230" r="2.6" fill="#c98b8b"/>
+<text x="714" y="234" font-size="11.5" fill="#2b3038">Federated protocols with accuracy</text>
+<text x="714" y="249" font-size="11.5" fill="#2b3038">guarantees</text>
+<circle cx="702" cy="264" r="2.6" fill="#c98b8b"/>
+<text x="714" y="268" font-size="11.5" fill="#2b3038">On-device and hierarchical</text>
+<text x="714" y="283" font-size="11.5" fill="#2b3038">personalization</text>
+<circle cx="702" cy="298" r="2.6" fill="#c98b8b"/>
+<text x="714" y="302" font-size="11.5" fill="#2b3038">Differential and generative privacy</text>
+<circle cx="702" cy="324" r="2.6" fill="#c98b8b"/>
+<text x="714" y="328" font-size="11.5" fill="#2b3038">LLM efficiency and economic viability</text>
+
+<g stroke="#c98b8b" stroke-width="1.4" marker-end="url(#a)">
+  <line x1="183" y1="370" x2="183" y2="392"/>
+  <line x1="510" y1="370" x2="510" y2="392"/>
+  <line x1="837" y1="370" x2="837" y2="392"/>
+</g>
+
+<rect x="30" y="396" width="960" height="62" rx="10" fill="#8C1515"/>
+<text x="46" y="416" font-size="10" fill="#e8c9c9" letter-spacing="1.2">HIGH-STAKES DOMAINS &amp; OPEN SOURCE  ·  WHERE THE ANSWER IS PROVED OUT, AND WHAT I GIVE BACK</text>
+<g font-size="12.5" fill="#fff">
+  <text x="46" y="440">Clinical text and sensing</text>
+  <text x="270" y="440">Buildings, energy and IoT</text>
+  <text x="530" y="440">Platforms and markets</text>
+  <text x="760" y="440">Open-source ecosystems</text>
+</g>
+
+<text x="510" y="482" text-anchor="middle" font-size="11.5" fill="#98a2b3">The conditions are not obstacles around the research. They are what the research is about.</text>
+</svg>
