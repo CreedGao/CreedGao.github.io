@@ -26,10 +26,16 @@ a:hover { text-decoration-color: var(--red); }
   margin: 0 auto;
   display: grid;
   grid-template-columns: 268px minmax(0, 1fr);
-  gap: 52px;
+  column-gap: 52px; row-gap: 0;
   padding: 34px 0 60px;
 }
-.side { position: sticky; top: 22px; align-self: start; }
+.sidecol { position: sticky; top: 22px; align-self: start; }
+/* two-column desktop: sidebar spans both rows, nav sits above the content */
+@media (min-width: 901px) {
+  .sidecol { grid-column: 1; grid-row: 1 / span 2; }
+  .nav { grid-column: 2; grid-row: 1; }
+  main { grid-column: 2; grid-row: 2; }
+}
 .side img.portrait { width: 100%; max-width: 232px; border-radius: 12px; display: block; }
 .side .name { font-size: 1.35rem; font-weight: 650; margin-top: 14px; letter-spacing: -0.01em; }
 .side .title { color: var(--muted); font-size: 0.93rem; margin-top: 3px; line-height: 1.45; }
@@ -66,16 +72,23 @@ a:hover { text-decoration-color: var(--red); }
 
 main { min-width: 0; }
 
-/* ---------- nav (right aligned) ---------- */
-.nav {
+/* ---------- nav (right aligned; collapses to a tap-to-open menu on phones) ---------- */
+.nav { margin-bottom: 22px; }
+.navlinks {
   display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end;
   font-size: 0.92rem;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 12px; margin-bottom: 22px;
+  padding-bottom: 12px;
 }
-.nav a { color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
-.nav a:hover { color: var(--red); }
-.nav a.active { color: var(--red); }
+.navlinks a { color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+.navlinks a:hover { color: var(--red); }
+.navlinks a.active { color: var(--red); }
+.navbtn { display: none; }
+/* News rides in the phone menu only; the desktop row is unchanged */
+.navlinks .navnews { display: none; }
+
+/* a hidden checkbox drives the phone menu — no JS on the site */
+.toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 
 /* ---------- type ---------- */
 h1 { font-size: 2rem; font-weight: 650; letter-spacing: -0.01em; margin-bottom: 10px; }
@@ -169,13 +182,47 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 22px; }
-  .side { position: static; display: grid; grid-template-columns: 130px 1fr; column-gap: 18px; row-gap: 4px; align-items: start; }
+  /* .side and .newsbox become items of .layout, so news can be ordered past main */
+  .sidecol { display: contents; }
+  .side { position: static; display: grid; grid-template-columns: 130px 1fr; column-gap: 18px; row-gap: 4px; align-items: start; order: 1; }
   .side img.portrait { max-width: 130px; grid-column: 1; grid-row: 1 / span 4; }
   .side .name, .side .title, .side .iconrow { grid-column: 2; }
   .side .themes, .side .where { grid-column: 1 / -1; }
-  .newsbox { grid-column: 1 / -1; }
-  .newsbox .body { max-height: 200px; }
-  .nav { justify-content: flex-start; }
+  main { order: 2; }
+  .newsbox { order: 3; margin-top: 0; }
+  .newsbox .body { max-height: 260px; }
+  .nav { order: 0; margin-bottom: 0; }
+  .navlinks { justify-content: flex-start; }
+}
+
+/* phones: the nav becomes an icon menu pinned to the top-right corner,
+   and the news box gives way to the News entry inside that menu */
+@media (max-width: 700px) {
+  .nav { position: relative; display: flex; justify-content: flex-end; }
+  .navbtn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 38px; cursor: pointer;
+    -webkit-user-select: none; user-select: none;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--red);
+  }
+  .navbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .navbtn .ico-close { display: none; }
+  #navtoggle:checked ~ .navbtn .ico-open { display: none; }
+  #navtoggle:checked ~ .navbtn .ico-close { display: block; }
+  #navtoggle:focus-visible ~ .navbtn { outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .navlinks { display: none; }
+  #navtoggle:checked ~ .navlinks {
+    display: block; position: absolute; top: calc(100% + 6px); right: 0; z-index: 20;
+    min-width: 190px; padding: 0; overflow: hidden;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(31, 35, 40, 0.13);
+  }
+  #navtoggle:checked ~ .navlinks a,
+  #navtoggle:checked ~ .navlinks .navnews { display: block; padding: 11px 14px; border-top: 1px solid var(--line); }
+  #navtoggle:checked ~ .navlinks a:first-child { border-top: none; }
+
+  .newsbox { display: none; }
 }
 @media (max-width: 520px) {
   body { font-size: 15.5px; }
@@ -183,7 +230,6 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
   .side { grid-template-columns: 100px 1fr; gap: 14px; }
   .side img.portrait { max-width: 100px; border-radius: 10px; }
   .side .name { font-size: 1.15rem; margin-top: 0; }
-  .nav { gap: 13px; row-gap: 6px; }
   h1 { font-size: 1.6rem; }
   .news-list li, .row { flex-wrap: wrap; gap: 6px; }
   .news-date, .row .yr { flex: 0 0 auto; }
