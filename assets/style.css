@@ -190,6 +190,10 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
   .side .themes, .side .where { grid-column: 1 / -1; }
   main { order: 2; }
   .newsbox { order: 3; margin-top: 0; }
+  /* stacked above the content, research themes and the postal address are just
+     the home page repeating itself — the mail icon still carries the address */
+  body.sub .side .themes, body.sub .side .where { display: none; }
+  body.sub .side { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
   .newsbox .body { max-height: 260px; }
   .nav { order: 0; margin-bottom: 0; }
   .navlinks { justify-content: flex-start; }
