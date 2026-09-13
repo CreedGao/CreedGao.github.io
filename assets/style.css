@@ -171,6 +171,7 @@ figure svg, figure img { max-width: 100%; height: auto; }
   padding: 1px 7px; color: #fff; background: var(--red); letter-spacing: 0.03em;
 }
 .news-tag.award { background: var(--gold); }
+.news-tag.service { background: var(--muted); }
 .news-body { flex: 1; font-size: 0.95rem; }
 
 .student { margin: 7px 0; font-size: 0.94rem; }
