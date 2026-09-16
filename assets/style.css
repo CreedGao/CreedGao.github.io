@@ -330,3 +330,18 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 @media (max-width: 700px) {
   .drow { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* ---------- story: sidebar closing line, card venue lines, method-line markers on chips ---------- */
+.side .themes .toward { display: block; margin-top: 5px; color: var(--red-dark); font-style: italic; }
+.ovcard .related .rp { color: var(--muted); font-weight: 600; }
+.ovcard .venues { color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin: 6px 0 0; }
+.domband .scope { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; line-height: 1.5; }
+.domband .legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-left: 10px; font-size: 0.74rem; color: var(--muted); vertical-align: 1px; }
+.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 1px; }
+.l-a { --lc: var(--red); } .l-b { --lc: #2f6f9f; } .l-c { --lc: #3a7d44; } .l-d { --lc: #98a2b3; }
+.sw { background: var(--lc); }
+.chip.l-a, .chip.l-b, .chip.l-c, .chip.l-d { border-left: 3px solid var(--lc); }
+.chip.pillar { font-weight: 700; }
+@media (max-width: 700px) {
+  .domband .legend { display: flex; margin: 4px 0 0; }
+}
