@@ -301,3 +301,16 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
   content: ""; position: absolute; left: 2px; top: 0.62em;
   width: 6px; height: 6px; border-radius: 50%; background: var(--red);
 }
+
+/* ---------- home: three method cards in a row + Application Domains band ---------- */
+.ovgrid.ovgrid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.domband { border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px 12px; margin-top: 16px; background: #fff; }
+.domband h3 { margin: 0 0 8px; font-size: 1.0rem; }
+.dlists { columns: 3; column-gap: 22px; }
+.dlists .dom { break-inside: avoid; margin-bottom: 10px; }
+.dlists .dom b { display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-dark); margin-bottom: 1px; }
+.dlists .related { margin: 0; }
+@media (max-width: 900px) {
+  .ovgrid.ovgrid3 { grid-template-columns: 1fr; }
+  .dlists { columns: 1; }
+}
