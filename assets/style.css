@@ -301,3 +301,21 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
   content: ""; position: absolute; left: 2px; top: 0.62em;
   width: 6px; height: 6px; border-radius: 50%; background: var(--red);
 }
+
+/* ---------- publications: browse by topic (native <details>, no JS) ---------- */
+.topics { margin: 12px 0 8px; }
+.topics .tg { margin: 8px 0 16px; }
+.topics .tg-hd { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 6px; }
+details.topic { border: 1px solid var(--line); border-radius: 8px; margin: 6px 0; background: #fff; }
+details.topic > summary { cursor: pointer; padding: 9px 12px; font-weight: 650; list-style: none; display: flex; align-items: center; gap: 9px; }
+details.topic > summary::-webkit-details-marker { display: none; }
+details.topic > summary::before { content: ""; flex: 0 0 auto; width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .15s ease; }
+details.topic[open] > summary::before { transform: rotate(45deg); }
+details.topic .n { margin-left: auto; color: var(--light); font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
+details.topic .body { padding: 2px 12px 10px; border-top: 1px solid var(--line); }
+details.topic .sub { margin: 10px 0 2px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-dark); }
+details.topic ul { list-style: none; margin: 0; }
+details.topic li { font-size: 0.9rem; padding: 3px 0; line-height: 1.45; }
+details.topic li .v { color: var(--muted); font-size: 0.84rem; white-space: nowrap; }
+details.topic li .dom { display: inline-block; font-size: 0.68rem; font-weight: 700; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 1px; }
+.pub:target { background: var(--soft); border-radius: 6px; padding: 6px 8px; margin-left: -8px; }
