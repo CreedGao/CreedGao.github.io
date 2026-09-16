@@ -302,15 +302,31 @@ footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; paddi
   width: 6px; height: 6px; border-radius: 50%; background: var(--red);
 }
 
-/* ---------- home: three method cards in a row + Application Domains band ---------- */
+/* ---------- awards: a small trophy replaces the star everywhere ---------- */
+.trophy { width: 0.95em; height: 0.95em; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.12em; margin: 0 2px 0 5px; }
+.aw { color: var(--red); font-weight: 650; font-size: 0.86em; }
+.award-inline .trophy { margin-left: 0; }
+
+/* ---------- home: three method cards in a row + Translational AI Systems band ---------- */
 .ovgrid.ovgrid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.domband { border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px 12px; margin-top: 16px; background: #fff; }
-.domband h3 { margin: 0 0 8px; font-size: 1.0rem; }
-.dlists { columns: 3; column-gap: 22px; }
-.dlists .dom { break-inside: avoid; margin-bottom: 10px; }
-.dlists .dom b { display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-dark); margin-bottom: 1px; }
-.dlists .related { margin: 0; }
+.domband { border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px 8px; margin-top: 16px; background: #fff; }
+.domband h3 { margin: 0 0 6px; font-size: 1.0rem; }
+.drow { display: grid; grid-template-columns: 178px 1fr; gap: 6px 14px; align-items: start; padding: 9px 0; border-top: 1px solid var(--line); }
+.drow:first-of-type { border-top: none; padding-top: 4px; }
+.dlab { display: flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-dark); padding-top: 3px; line-height: 1.3; }
+.dlab svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: var(--red); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips.repos { margin-top: 6px; }
+.chip { display: inline-flex; align-items: baseline; gap: 5px; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; font-size: 0.82rem; font-weight: 600; color: var(--ink); text-decoration: none; background: #fff; line-height: 1.5; white-space: nowrap; }
+.chip span { color: var(--muted); font-weight: 500; font-size: 0.74rem; }
+.chip .trophy { margin: 0 0 0 1px; align-self: center; }
+a.chip:hover { border-color: var(--red); color: var(--red); }
+.chip.repo { background: #fffbea; border-color: #ead9a0; align-items: center; }
+.chip.repo svg { width: 13px; height: 13px; fill: var(--ink); margin-right: 1px; }
+.chip.repo span { color: var(--gold); font-weight: 600; }
 @media (max-width: 900px) {
   .ovgrid.ovgrid3 { grid-template-columns: 1fr; }
-  .dlists { columns: 1; }
+}
+@media (max-width: 700px) {
+  .drow { grid-template-columns: 1fr; gap: 4px; }
 }
