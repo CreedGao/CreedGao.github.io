@@ -97,36 +97,40 @@ learning systems.</p>
   <p class="kw">code generation &amp; agents &middot; clinical text &middot; factuality &amp; evaluation &middot; LLM-as-judge &middot; neuro-symbolic interpretability</p>
 </div>
 
-<p class="hinge">Checkable output is one thing on a benchmark and another inside a platform whose distribution moves every day.</p>
+<p class="hinge">Checkable output is one thing on a benchmark and another inside a platform learning many kinds of data at once.</p>
 
 
 <div class="theme" id="t2">
   <h3>Alignment at Large Scale</h3>
-  <p class="q"><i>Do alignment methods hold up at the scale of a live platform?</i></p>
-  <p>A method that behaves on a benchmark can still fall apart on a platform, so I test mine
- inside production recommender systems, where the failures are mechanical rather than conceptual.
- ID embeddings and multimodal representations converge at different speeds, which
+  <p class="q"><i>Can several kinds of data be learned in one model without one source erasing another?</i></p>
+  <p>Joint training assumes that its branches converge at similar speeds and that one
+ sub-population stands for all, and both fail at scale, so I test my methods inside production
+ recommender systems, where the failures are mechanical rather than conceptual.
+ ID embeddings and multimodal representations converge at different speeds and sit in different
+ distributions, which
  <a href="assets/papers/Adaptive-Gradient-Masking-for-Balancing-ID-and-MLLM-based-Re.pdf">AGM</a>
- (NeurIPS 2025) handles with adaptive gradient masking and two KDD 2025 papers handle by
- <a href="assets/papers/Aligning-and-Balancing-ID-and-Multimodal-Representations-for.pdf">aligning</a> and
- <a href="assets/papers/Leveraging-Label-Distributions-as-Anchors-to-Enhance-Video-R.pdf">anchoring</a>
- the two families. Behaviour drifts across scenarios and markets, which
+ (NeurIPS 2025) handles with contribution-weighted gradient masking and
+ <a href="assets/papers/Aligning-and-Balancing-ID-and-Multimodal-Representations-for.pdf">AB-Rec</a>
+ (KDD 2025) by aligning the two families without collapsing them. Behaviour differs across
+ scenarios, homepage, local page and live stream, which
  <a href="assets/papers/Distribution-aware-Re-representations-for-Multi-Scenario-Rec.pdf">distribution-aware re-representation</a>
- (SIGIR 2026) is built for. And every retraining run costs money that someone has to justify.</p>
+ (SIGIR 2026) is built for. And every online test costs money that someone has to justify.</p>
  <p>The question underneath is the one from the previous theme: whether the output can be trusted,
  not only whether it scores well.
  <a href="assets/papers/Prototype-Guided-Representation-Projection-for-Multi-Domain-.pdf">Prototype-guided projection</a>
  (ACM MM 2025, Oral) carries what one domain learned into another without distorting either,
  <a href="assets/papers/From-Guesswork-to-Guarantee-Towards-Faithful-Multimedia-Web-.pdf">TimeSieve</a>
  asks for forecasts that are faithful rather than merely accurate,
+ <a href="assets/papers/Leveraging-Label-Distributions-as-Anchors-to-Enhance-Video-R.pdf">label-distribution anchors</a>
+ (KDD 2025) and
  <a href="assets/papers/Calibrating-Video-Watch-time-Predictions-with-Credible-Proto.pdf">watch-time calibration</a>
- (ICML 2025) puts an honest confidence on a prediction that decides what a platform's entire audience sees, and
+ (ICML 2025) put an honest prediction on a multi-peaked label that decides what a platform's entire audience sees, and
  <a href="assets/papers/EGGesture-Entropy-Guided-Vector-Quantized-Variational-AutoEn.pdf">EGGesture</a>
  (ACM MM 2024) applies the same discipline to multimodal generation. Running at this scale is the
  strongest evidence I have that a method is real. It also assumes something these platforms have
  and almost none of my other settings do: every record in one place.</p>
   
-  <p class="kw">multimodal alignment &middot; recommender systems &middot; distribution shift &middot; faithfulness &amp; calibration &middot; large-scale deployment</p>
+  <p class="kw">multimodal alignment &middot; recommender systems &middot; multi-scenario alignment &middot; faithfulness &amp; calibration &middot; large-scale deployment</p>
 </div>
 
 <p class="hinge">Scale assumes the data can be gathered in one place. In the settings I care about it cannot.</p>

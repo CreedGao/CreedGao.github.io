@@ -69,18 +69,18 @@ grids, financial markets, and the platforms people use every day. Three things h
 that is possible, and each is one of my research lines:</p>
 
 <ul class="qlist">
-  <li><b>Trustworthy generation and agents:</b> generation whose output can be verified, from code to clinical text.</li>
-  <li><b>Alignment at large scale:</b> alignment and calibration methods that hold under continual distribution shift.</li>
-  <li><b>Privacy-preserving and efficient learning:</b> federated learning and efficient inference where data cannot leave the device.</li>
-  <li><b>Translational AI systems:</b> where the three are put to the test &mdash; interdisciplinary work with clinicians, building engineers, and platform teams, in hospitals, buildings and grids, financial markets, and the software people use.</li>
+  <li><b>Trustworthy generation and agents:</b> generation and agents whose output can be checked against the structure of its target.</li>
+  <li><b>Alignment at large scale:</b> representation alignment and calibration for learning heterogeneous data in one model.</li>
+  <li><b>Privacy-preserving and efficient learning:</b> federated learning and efficient inference where data cannot leave the device and compute is scarce.</li>
+  <li><b>Translational AI systems:</b> where the three are put to the test with clinicians, building engineers, developers, and platform teams: clinical reports and sensing in hospitals, buildings and grids, financial markets and open source, generated software, and recommendation platforms serving hundreds of millions of people.</li>
 </ul>
 
 <p>My work appears at ICML, NeurIPS, ICLR,
 AAAI, KDD, WWW, SIGIR, ACM MM and CVPR, in the ACL family, and at systems venues including ICCPS,
 IPDPS, SenSys and IPSN, and it has been recognized by a Google HE Faculty AI Fellowship, a Best
 Paper Nomination at the EMNLP Industry Track, orals at ACM MM and CHIL, a Best Paper Candidate at
-ACM BuildSys, and the World's Top 2% Scientists list. I also treat shared evaluation resources as
-part of the research, contributing to the FinRL open-source ecosystem and organizing the
+ACM BuildSys, and the World's Top 2% Scientists list. I also contribute to the FinRL open-source
+ecosystem and organize the
 <a href="https://finrl-contest.readthedocs.io/en/latest/" target="_blank">FinRL Contests</a>.</p>
 
 <h2>Research overview</h2>
@@ -88,19 +88,19 @@ part of the research, contributing to the FinRL open-source ecosystem and organi
 <div class="ovgrid ovgrid3">
 <div class="ovcard" id="t1">
   <h3>Trustworthy Generation &amp; Agents</h3>
-  <p class="scope">Output that can be checked. Generated code has to compile and run across frameworks, clinical text has to be grounded in anatomy, and both need evaluation infrastructure that decides whether they hold.</p>
+  <p class="scope">Output that can be checked. Mine the structure of the target first, generate inside it, then verify and repair against that structure, with evaluators built where nothing can be executed.</p>
   <p class="related"><span class="rp">e.g.</span> <a href="assets/papers/Truth-Trust-and-Trouble-Medical-AI-on-the-Edge.pdf">Edge medical AI (EMNLP Industry'25)</a> <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Nom.</span>, <a href="assets/papers/Deterministic-Component-Mining-for-Multi-framework-UI2Code-G.pdf">DCM (ICML'26)</a>.</p>
   <p class="venues">ICML &times;2 &middot; ICLR &middot; AAAI &times;2 &middot; WWW &middot; ACL &times;3 &middot; EMNLP &times;4 &middot; EACL &times;2 &middot; KDD, etc.</p>
 </div>
 <div class="ovcard" id="t2">
   <h3>Alignment at Large Scale</h3>
-  <p class="scope">Alignment and calibration tested in large-scale recommendation platforms, where distributions shift daily and every retraining run has a cost.</p>
+  <p class="scope">Several kinds of data learned in one model. Modalities, sub-populations and label distributions have to be aligned and calibrated without one source erasing another, and the methods have to hold at production scale.</p>
   <p class="related"><span class="rp">e.g.</span> <a href="assets/papers/Prototype-Guided-Representation-Projection-for-Multi-Domain-.pdf">Prototype-guided projection (ACM MM'25)</a> <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral</span>, <a href="assets/papers/Adaptive-Gradient-Masking-for-Balancing-ID-and-MLLM-based-Re.pdf">AGM (NeurIPS'25)</a>.</p>
   <p class="venues">NeurIPS &middot; SIGIR &middot; KDD &times;2 &middot; ICML &middot; ACM MM &times;3 &middot; CVPR, etc.</p>
 </div>
 <div class="ovcard" id="t3">
   <h3>Privacy-Preserving &amp; Efficient Learning</h3>
-  <p class="scope">Learning where the data and the compute actually are. Data stays on the device or in the hospital, budgets are finite, and the accuracy cost of both has to be part of the design.</p>
+  <p class="scope">Learning where the data and the compute actually are. Data stays where it is collected, budgets are finite, and the accuracy cost of privacy and the energy cost of adaptation are part of the design.</p>
   <p class="related"><span class="rp">e.g.</span> <a href="assets/papers/H-FedSN-Personalized-Sparse-Networks-for-Efficient-and-Accur.pdf">H-FedSN (NPJ AI'26)</a>, <a href="assets/papers/Are-Large-Language-Models-Economically-Viable-for-Industry-D.pdf">LLM economic viability (ACL Industry'26)</a>.</p>
   <p class="venues">NPJ AI &middot; ICCPS &middot; ACL &middot; EMNLP &middot; IPDPS &middot; IEEE TSC, etc.</p>
 </div>
