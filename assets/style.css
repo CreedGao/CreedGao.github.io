@@ -373,3 +373,19 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 @media (max-width: 900px) { .pgrid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr; } }
 @media print { .ppanel { display: block !important; } .pillcard .more, .pp-close { display: none; } }
+
+/* ---- 2026-09-24 (later): "Selected papers" captions, Translational AI Systems as a wide card + panel, line tags on its cards ---- */
+.pillcard.wide { margin-top: 12px; }
+.pp-cap { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.78rem; color: var(--muted); margin: -4px 0 10px; }
+.pp-cap .legend { display: inline-flex; flex-wrap: wrap; gap: 4px 6px; margin-left: auto; }
+.ltag { display: inline-block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; background: var(--lc, var(--muted)); border-radius: 4px; padding: 1px 6px; line-height: 1.5; vertical-align: 1px; white-space: nowrap; }
+.pc-hd .ltag { margin-left: auto; align-self: center; }
+.pcard.l-a, .pcard.l-b, .pcard.l-c, .pcard.l-d { border-top: 3px solid var(--lc); }
+.dgroup { padding: 8px 0 2px; }
+.dgroup + .dgroup { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 12px; }
+.dgroup .dlab { margin-bottom: 7px; }
+.dgroup .chips.repos { margin-top: 8px; }
+#pill-t4:checked ~ #panel-t4 { display: block; }
+#pill-t4:checked ~ label[for="pill-t4"] { border-color: var(--red); background: var(--soft); }
+#pill-t4:checked ~ label[for="pill-t4"] .more::after { content: " \25B4"; }
+@media (max-width: 700px) { .pp-cap .legend { margin-left: 0; } }
