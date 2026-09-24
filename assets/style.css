@@ -348,7 +348,9 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 
 /* ---- 2026-09-24: method cards as click-to-expand panels (no JS: radio + label) ---- */
 .pillars input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
-.pillcard { cursor: pointer; display: block; transition: border-color .15s, box-shadow .15s; }
+.pillcard { position: relative; cursor: pointer; display: block; transition: border-color .15s, box-shadow .15s; }
+.pillcard .hit { position: absolute; inset: 0; cursor: pointer; border-radius: inherit; }
+.pillcard .hit-close, .pillcard .m-close { display: none; }
 .pillcard:hover { border-color: var(--red); box-shadow: 0 1px 0 rgba(140,21,21,.15); }
 .pillcard .more { display: inline-block; margin-top: 8px; font-size: 0.8rem; font-weight: 600; color: var(--red); }
 .pillcard .more::after { content: " \25BE"; }
@@ -368,11 +370,16 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 .pc-hd .aw { font-size: 0.74rem; }
 .pc-t { color: var(--muted); font-size: 0.76rem; line-height: 1.4; margin-top: 2px; }
 #pill-t1:checked ~ #panel-t1, #pill-t2:checked ~ #panel-t2, #pill-t3:checked ~ #panel-t3 { display: block; }
-#pill-t1:checked ~ .ovgrid label[for="pill-t1"], #pill-t2:checked ~ .ovgrid label[for="pill-t2"], #pill-t3:checked ~ .ovgrid label[for="pill-t3"] { border-color: var(--red); background: var(--soft); }
-#pill-t1:checked ~ .ovgrid label[for="pill-t1"] .more::after, #pill-t2:checked ~ .ovgrid label[for="pill-t2"] .more::after, #pill-t3:checked ~ .ovgrid label[for="pill-t3"] .more::after { content: " \25B4"; }
+/* open state: highlight, flip the caret, swap the caption, and swap which hit-label is on top (second click closes) */
+#pill-t1:checked ~ .ovgrid #t1, #pill-t2:checked ~ .ovgrid #t2, #pill-t3:checked ~ .ovgrid #t3, #pill-t4:checked ~ #t4 { border-color: var(--red); background: var(--soft); }
+#pill-t1:checked ~ .ovgrid #t1 .more::after, #pill-t2:checked ~ .ovgrid #t2 .more::after, #pill-t3:checked ~ .ovgrid #t3 .more::after, #pill-t4:checked ~ #t4 .more::after { content: " \25B4"; }
+#pill-t1:checked ~ .ovgrid #t1 .m-open, #pill-t2:checked ~ .ovgrid #t2 .m-open, #pill-t3:checked ~ .ovgrid #t3 .m-open, #pill-t4:checked ~ #t4 .m-open,
+#pill-t1:checked ~ .ovgrid #t1 .hit-open, #pill-t2:checked ~ .ovgrid #t2 .hit-open, #pill-t3:checked ~ .ovgrid #t3 .hit-open, #pill-t4:checked ~ #t4 .hit-open { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .m-close, #pill-t2:checked ~ .ovgrid #t2 .m-close, #pill-t3:checked ~ .ovgrid #t3 .m-close, #pill-t4:checked ~ #t4 .m-close { display: inline; }
+#pill-t1:checked ~ .ovgrid #t1 .hit-close, #pill-t2:checked ~ .ovgrid #t2 .hit-close, #pill-t3:checked ~ .ovgrid #t3 .hit-close, #pill-t4:checked ~ #t4 .hit-close { display: block; }
 @media (max-width: 900px) { .pgrid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr; } }
-@media print { .ppanel { display: block !important; } .pillcard .more, .pp-close { display: none; } }
+@media print { .ppanel { display: block !important; } .pillcard .more, .pillcard .hit, .pp-close { display: none; } }
 
 /* ---- 2026-09-24 (later): "Selected papers" captions, Translational AI Systems as a wide card + panel, line tags on its cards ---- */
 .pillcard.wide { margin-top: 12px; }
@@ -386,6 +393,4 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 .dgroup .dlab { margin-bottom: 7px; }
 .dgroup .chips.repos { margin-top: 8px; }
 #pill-t4:checked ~ #panel-t4 { display: block; }
-#pill-t4:checked ~ label[for="pill-t4"] { border-color: var(--red); background: var(--soft); }
-#pill-t4:checked ~ label[for="pill-t4"] .more::after { content: " \25B4"; }
 @media (max-width: 700px) { .pp-cap .legend { margin-left: 0; } }
