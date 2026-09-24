@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=368e9368">
+<link rel="stylesheet" href="assets/style.css?v=3bb82b91">
 </head>
 <body class="sub">
 <div class="layout">
@@ -43,7 +43,7 @@
 </aside>
 <div class="newsbox">
   <div class="hd"><span>News</span><a href="news.html">all &rarr;</a></div>
-  <div class="body"><div class="it"><span class="d">Sep 2026</span>Serving as Area Chair for the EACL 2026 Industry Track.</div><div class="it"><span class="d">Aug 2026</span>H-FedSN is accepted at NPJ Artificial Intelligence.</div><div class="it"><span class="d">Aug 2026</span>EGT-KG is accepted to EMNLP 2026 Industry Track.</div><div class="it"><span class="d">May 2026</span>Received the Google HE Faculty AI Fellowship.</div><div class="it"><span class="d">May 2026</span>DCM and MulFCoder, our multi-framework UI2Code papers, are accepted to ICML 2026.</div><div class="it"><span class="d">May 2026</span>Three papers accepted in the ACL 2026 cycle: LLM-Guided Tsetlin (Findings), FROST and Are LLMs Economically Viable (Industry Track).</div><div class="it"><span class="d">Apr 2026</span>Distribution-aware Re-representations is accepted to SIGIR 2026.</div><div class="it"><span class="d">Apr 2026</span>Trustworthy Agent Network is accepted to the KDD 2026 Blue Sky Track.</div><div class="it"><span class="d">Jan 2026</span>GRO-RAG is accepted to ICLR 2026.</div><div class="it"><span class="d">Jan 2026</span>Our culturally aware harmful meme detection paper is accepted to WWW 2026.</div><div class="it"><span class="d">Dec 2025</span>Papers accepted at EACL 2026 (Industry and Findings) and ICASSP 2026 (&times;4).</div><div class="it"><span class="d">Nov 2025</span>Truth, Trust, and Trouble receives a Best Paper Nomination at EMNLP 2025 Industry Track.</div></div>
+  <div class="body"><div class="it"><span class="d">Sep 2026</span>Four papers accepted at NeurIPS 2026: Phase-wise tuning, MESCoder and RSU (multi-framework UI-to-code generation and repair) and AnchorGen (diffusion language planning for chest X-ray reports).</div><div class="it"><span class="d">Sep 2026</span>Serving as Area Chair for the EACL 2026 Industry Track.</div><div class="it"><span class="d">Aug 2026</span>H-FedSN is accepted at NPJ Artificial Intelligence.</div><div class="it"><span class="d">Aug 2026</span>EGT-KG is accepted to EMNLP 2026 Industry Track.</div><div class="it"><span class="d">May 2026</span>Received the Google HE Faculty AI Fellowship.</div><div class="it"><span class="d">May 2026</span>DCM and MulFCoder, our multi-framework UI2Code papers, are accepted to ICML 2026.</div><div class="it"><span class="d">May 2026</span>Three papers accepted in the ACL 2026 cycle: LLM-Guided Tsetlin (Findings), FROST and Are LLMs Economically Viable (Industry Track).</div><div class="it"><span class="d">Apr 2026</span>Distribution-aware Re-representations is accepted to SIGIR 2026.</div><div class="it"><span class="d">Apr 2026</span>Trustworthy Agent Network is accepted to the KDD 2026 Blue Sky Track.</div><div class="it"><span class="d">Jan 2026</span>GRO-RAG is accepted to ICLR 2026.</div><div class="it"><span class="d">Jan 2026</span>Our culturally aware harmful meme detection paper is accepted to WWW 2026.</div><div class="it"><span class="d">Dec 2025</span>Papers accepted at EACL 2026 (Industry and Findings) and ICASSP 2026 (&times;4).</div></div>
 </div>
 </div>
 <main>
@@ -77,13 +77,14 @@ learning systems.</p>
  <a href="assets/papers/MulFCoder-Framework-conditioned-Multi-agent-for-MLLM-based-M.pdf">MulFCoder</a>
  coordinates framework-conditioned agents to assemble them (both ICML 2026),
  <a href="assets/papers/SynFix-Dependency-Aware-Program-Repair-via-RelationGraph-Ana.pdf">SynFix</a>
- (Findings of ACL 2025) repairs the dependencies a repository-level edit breaks, and ongoing work carries the line into phase-wise tuning, executable multi-framework generation, and
- uncertainty-guided repair. Code is the honest case, because a compiler is an evaluator nobody can
+ (Findings of ACL 2025) repairs the dependencies a repository-level edit breaks, and three NeurIPS 2026 papers close the loop: Phase-wise Tuning removes
+ cross-framework interference during adapter tuning, MESCoder generates executable multi-framework projects with self-correction under sandbox feedback, and RSU
+ localizes and repairs HTML structure under render uncertainty. Code is the honest case, because a compiler is an evaluator nobody can
  argue with.</p>
  <p>Most domains have no compiler, so the evaluator has to be built.
  <a href="assets/papers/S2D-ALIGN-Shallow-to-Deep-Auxiliary-Learning-for-Anatomicall.pdf">S2D-Align</a>
  (AAAI 2026) grounds radiology report generation in anatomical structure, so a generated finding
- can be traced back to the region it came from.
+ can be traced back to the region it came from, and AnchorGen (NeurIPS 2026) plans the clinical anchors of a report with a diffusion language model before the text is written.
  <a href="assets/papers/LLM-Guided-Semantic-Bootstrapping-for-Interpretable-Text-Cla.pdf">Semantic bootstrapping with Tsetlin machines</a>
  (Findings of ACL 2026) keeps a classifier readable by construction rather than explained after the
  fact. And where neither is available I measure trust directly, from

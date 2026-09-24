@@ -345,3 +345,31 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 @media (max-width: 700px) {
   .domband .legend { display: flex; margin: 4px 0 0; }
 }
+
+/* ---- 2026-09-24: method cards as click-to-expand panels (no JS: radio + label) ---- */
+.pillars input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+.pillcard { cursor: pointer; display: block; transition: border-color .15s, box-shadow .15s; }
+.pillcard:hover { border-color: var(--red); box-shadow: 0 1px 0 rgba(140,21,21,.15); }
+.pillcard .more { display: inline-block; margin-top: 8px; font-size: 0.8rem; font-weight: 600; color: var(--red); }
+.pillcard .more::after { content: " \25BE"; }
+.ppanel { display: none; border: 1px solid var(--red); border-radius: 10px; padding: 14px 17px 12px; margin-top: 12px; background: #fff; }
+.ppanel .pp-x { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ppanel h3 { margin: 0; font-size: 1.0rem; }
+.pp-close { cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.pp-close:hover { color: var(--red); }
+.pp-text { color: var(--ink); font-size: 0.9rem; line-height: 1.6; margin: 6px 0 10px; }
+.pgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; }
+.pcard { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px 6px; background: var(--soft); min-width: 0; }
+.pc-hd { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 7px; font-size: 0.86rem; }
+.pc-name { font-weight: 650; }
+.pc-name a { text-decoration-color: rgba(140,21,21,.28); }
+.pc-v { color: var(--muted); font-size: 0.76rem; font-weight: 600; }
+.pc-hd .trophy { align-self: center; }
+.pc-hd .aw { font-size: 0.74rem; }
+.pc-t { color: var(--muted); font-size: 0.76rem; line-height: 1.4; margin-top: 2px; }
+#pill-t1:checked ~ #panel-t1, #pill-t2:checked ~ #panel-t2, #pill-t3:checked ~ #panel-t3 { display: block; }
+#pill-t1:checked ~ .ovgrid label[for="pill-t1"], #pill-t2:checked ~ .ovgrid label[for="pill-t2"], #pill-t3:checked ~ .ovgrid label[for="pill-t3"] { border-color: var(--red); background: var(--soft); }
+#pill-t1:checked ~ .ovgrid label[for="pill-t1"] .more::after, #pill-t2:checked ~ .ovgrid label[for="pill-t2"] .more::after, #pill-t3:checked ~ .ovgrid label[for="pill-t3"] .more::after { content: " \25B4"; }
+@media (max-width: 900px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .pgrid { grid-template-columns: 1fr; } }
+@media print { .ppanel { display: block !important; } .pillcard .more, .pp-close { display: none; } }
