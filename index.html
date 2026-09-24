@@ -50,7 +50,6 @@
 
 <div class="notice">
   <p class="lead">I am on the 2026&ndash;27 academic job market.</p>
-  <p>I am a U.S. permanent resident and can work in the United States without visa sponsorship.</p>
 </div>
 
 <p class="tagline">What has to be true about an AI system before anyone can rely on it?</p>
@@ -64,15 +63,15 @@ Competitiveness</a>, working with
 I was previously an Associate Research Scientist at Columbia University, and I received my Ph.D.
 in Computer Science from the University of Virginia in 2024, advised by
 <a href="https://www.cs.virginia.edu/~bjc8c/" target="_blank">Prof. Bradford Campbell</a>. My
-research aims at translational AI systems: systems that hold up in hospitals, buildings and power
+research aims at translational AI systems: AI that holds up in hospitals, buildings and power
 grids, financial markets, and the platforms people use every day. Three things have to be true before
-that is possible, and each is one of my research lines:</p>
+that is possible:</p>
 
 <ul class="qlist">
-  <li><b>Trustworthy generation and agents:</b> generation and agents whose output can be checked against the structure of its target.</li>
-  <li><b>Alignment at large scale:</b> representation alignment and calibration for learning heterogeneous data in one model.</li>
-  <li><b>Privacy-preserving and efficient learning:</b> federated learning and efficient inference where data cannot leave the device and compute is scarce.</li>
-  <li><b>Translational AI systems:</b> where the three are put to the test with clinicians, building engineers, developers, and platform teams: clinical reports and sensing in hospitals, buildings and grids, financial markets and open source, generated software, and recommendation platforms serving hundreds of millions of people.</li>
+  <li><b>Trustworthy generation and agents</b></li>
+  <li><b>Alignment at large scale</b></li>
+  <li><b>Privacy-preserving and efficient learning</b></li>
+  <li><b>Translational AI systems:</b> with the three in place, I put them to the test with clinicians, building engineers, developers, and platform teams: clinical reports and sensing in hospitals, buildings and grids, financial markets and open source, generated software, and recommendation platforms serving hundreds of millions of people.</li>
 </ul>
 
 <p>My work appears at ICML, NeurIPS, ICLR,
@@ -88,31 +87,28 @@ ecosystem and organize the
 <div class="pillars">
 <input type="radio" name="pill" id="pill-none" checked><input type="radio" name="pill" id="pill-t1"><input type="radio" name="pill" id="pill-t2"><input type="radio" name="pill" id="pill-t3"><input type="radio" name="pill" id="pill-t4">
 <div class="ovgrid ovgrid3">
-<div class="ovcard pillcard" id="t1">
+<label class="ovcard pillcard" for="pill-t1" id="t1">
   <h3>Trustworthy Generation &amp; Agents</h3>
-  <p class="scope">Output that can be checked. Mine the structure of the target first, generate inside it, then verify and repair against that structure, with evaluators built where nothing can be executed.</p>
+  <p class="scope">When an AI writes code or drafts a medical report, someone has to be able to check it. I build generators that first work out what the result must look like, write within that frame, and then test and repair their own output; where nothing can be run to check an answer, I build the judge.</p>
   <p class="venues">NeurIPS &times;4 &middot; ICLR &middot; ICML &times;2 &middot; AAAI &times;2 &middot; WWW &middot; EMNLP Industry <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Nom.</span>, etc.</p>
-  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
-  <label class="hit hit-open" for="pill-t1" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
-</div>
-<div class="ovcard pillcard" id="t2">
+  <span class="more">Selected papers</span>
+</label>
+<label class="ovcard pillcard" for="pill-t2" id="t2">
   <h3>Alignment at Large Scale</h3>
-  <p class="scope">Several kinds of data learned in one model. Modalities, sub-populations and label distributions have to be aligned and calibrated without one source erasing another, and the methods have to hold at production scale.</p>
+  <p class="scope">One model often has to learn from many kinds of data at once: images and text, different groups of users, many kinds of labels. I develop methods that keep these sources in balance so that none drowns out another, and that still hold up on platforms with hundreds of millions of users.</p>
   <p class="venues">NeurIPS &middot; ICML &middot; KDD &times;2 &middot; ACM MM &times;3 <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (top 4%)</span> &middot; SIGIR &middot; CVPR, etc.</p>
-  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
-  <label class="hit hit-open" for="pill-t2" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
-</div>
-<div class="ovcard pillcard" id="t3">
+  <span class="more">Selected papers</span>
+</label>
+<label class="ovcard pillcard" for="pill-t3" id="t3">
   <h3>Privacy-Preserving &amp; Efficient Learning</h3>
-  <p class="scope">Learning where the data and the compute actually are. Data stays where it is collected, budgets are finite, and the accuracy cost of privacy and the energy cost of adaptation are part of the design.</p>
+  <p class="scope">Some data cannot leave the hospital, the building or the phone, and the devices there have little computing power. I design learning methods that work where the data lives, with privacy protection and energy cost built into the design rather than added afterwards.</p>
   <p class="venues">NPJ AI &middot; ICCPS &middot; IPDPS &middot; IEEE TSC, etc.</p>
-  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
-  <label class="hit hit-open" for="pill-t3" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
-</div>
+  <span class="more">Selected papers</span>
+</label>
 </div>
 <div class="ppanel" id="panel-t1">
   <div class="pp-x"><h3>Trustworthy Generation &amp; Agents</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
-  <p class="pp-text">Generated output is usually scored, not checked. I recover the deterministic structure of the target first, generate inside it, then verify and repair against that structure within a budget; where nothing can be executed, I build the evaluator and study how it fails. The line runs from multi-framework front-end code, which has to compile, render and be repaired, to radiology reports grounded in anatomy and in a planned clinical canvas, and to judges for content that cannot be executed.</p>
+  <p class="pp-text">Most AI systems that generate things are graded by a similarity score: close enough to a reference counts as correct. That is not the same as checking it. My approach is to make the output checkable: first recover the parts of the target that are fixed (the layout of a web page, the structure of a program, the anatomy in an X-ray), have the model generate within them, then verify the result against that structure and repair what fails. Where nothing can be run to check an answer, such as a medical question, I build the evaluator and study where it breaks. The line runs from front-end code, which has to compile and render, to radiology reports that must point at the right anatomy, to judges for text that cannot be executed.</p>
   <p class="pp-cap">Selected papers; the full list is on the <a href="publications.html">Publications</a> page.</p>
   <div class="pgrid">
 <div class="pcard"><div class="pc-hd"><span class="pc-name">Phase-wise tuning</span><span class="pc-v">NeurIPS&#x27;26</span></div><div class="pc-t">Phase-wise MLLM Tuning for Multi-framework WebUI Code Generation</div></div>
@@ -130,7 +126,7 @@ ecosystem and organize the
 </div>
 <div class="ppanel" id="panel-t2">
   <div class="pp-x"><h3>Alignment at Large Scale</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
-  <p class="pp-text">Alignment here means representation alignment, not preference alignment: several kinds of data learned in one model, modalities of the same object, sub-populations of the same task, a prediction and the distribution of its label. Joint training quietly assumes that its branches converge at similar speeds and that one sub-population stands for all; my methods replace each assumption with a quantity the model estimates. Large-scale recommendation has been the proving ground, with methods validated in online A/B tests and one fully deployed.</p>
+  <p class="pp-text">Alignment here is not about preferences; it is about keeping different kinds of data in step inside one model. A recommendation model, for example, learns from user histories and from video content at the same time, serves a homepage and a live stream at once, and predicts quantities such as watch time that are not a single number. Standard training quietly assumes that all of these behave alike, and at scale they do not. My methods measure the gaps and correct for them during training. Large-scale recommendation has been the testing ground: the methods were tested in live A/B experiments and one is fully deployed.</p>
   <p class="pp-cap">Selected papers; the full list is on the <a href="publications.html">Publications</a> page.</p>
   <div class="pgrid">
 <div class="pcard"><div class="pc-hd"><span class="pc-name"><a href="assets/papers/Distribution-aware-Re-representations-for-Multi-Scenario-Rec.pdf">DAR</a></span><span class="pc-v">SIGIR&#x27;26</span></div><div class="pc-t">Distribution-aware Re-representations for Multi-Scenario Recommendations</div></div>
@@ -146,7 +142,7 @@ ecosystem and organize the
 </div>
 <div class="ppanel" id="panel-t3">
   <div class="pp-x"><h3>Privacy-Preserving &amp; Efficient Learning</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
-  <p class="pp-text">Most methods treat the privacy boundary and the resource budget as evaluation conditions applied after design. I decide at design time which parts of a model stay local, which are shared, and how the cost of sharing enters the algorithm: a layer-importance mask that decides where privacy noise is paid, a two-level Bayesian aggregation for heterogeneous devices, and a deployment metric that states when a model has paid for itself. The line began in datacenters and now runs on IoT devices, in buildings and in hospitals.</p>
+  <p class="pp-text">Privacy and computing budgets are usually treated as constraints applied after a model is designed, which is why privacy protection often costs so much accuracy that it gets switched off. I decide at design time which parts of a model stay on the device, which parts are shared, and what sharing costs: a rule for where privacy noise is worth paying, a way to combine updates from devices that differ from one another, and a cost metric that says when an AI deployment has paid for itself. The line started in datacenters and now runs on phones and sensors, in buildings and in hospitals.</p>
   <p class="pp-cap">Selected papers; the full list is on the <a href="publications.html">Publications</a> page.</p>
   <div class="pgrid">
 <div class="pcard"><div class="pc-hd"><span class="pc-name"><a href="assets/papers/H-FedSN-Personalized-Sparse-Networks-for-Efficient-and-Accur.pdf">H-FedSN</a></span><span class="pc-v">NPJ AI&#x27;26</span></div><div class="pc-t">H-FedSN: Personalized Sparse Networks for Efficient and Accurate Hierarchical Federated Learning for IoT Applications</div></div>
@@ -155,14 +151,13 @@ ecosystem and organize the
 <div class="pcard"><div class="pc-hd"><span class="pc-name"><a href="assets/papers/Task-failure-prediction-in-cloud-data-centers-using-deep-lea.pdf">Task failure</a></span><span class="pc-v">IEEE TSC&#x27;20</span></div><div class="pc-t">Task failure prediction in cloud data centers using deep learning</div></div>
   </div>
 </div>
-<div class="ovcard pillcard wide" id="t4">
+<label class="ovcard pillcard wide" for="pill-t4" id="t4">
   <h3>Translational AI Systems</h3>
   <p class="scope">Where the three lines above are put to the test.</p>
   <p class="venues">Healthcare &middot; Buildings, Energy &amp; Infrastructure &middot; Finance &amp; Open Source &middot; Software Engineering &middot; Platforms &amp; Media</p>
   <p class="venues"><svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Nom.</span> EMNLP Ind.&#x27;25 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (13.3%)</span> CHIL&#x27;23 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Cand.</span> BuildSys&#x27;24 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (top 4%)</span> ACM MM&#x27;25</p>
-  <span class="more"><span class="m-open">Selected papers by domain</span><span class="m-close">Hide papers</span></span>
-  <label class="hit hit-open" for="pill-t4" aria-label="Show selected papers by domain"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers by domain"></label>
-</div>
+  <span class="more">Selected papers by domain</span>
+</label>
 <div class="ppanel" id="panel-t4">
   <div class="pp-x"><h3>Translational AI Systems</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
   <p class="pp-text">The three lines are put to the test with the people who run the systems: clinicians, building engineers, developers, platform teams, and the open-source finance community. Each paper is tagged with the line it advances.</p>
