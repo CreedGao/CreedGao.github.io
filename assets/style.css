@@ -1,0 +1,422 @@
+:root {
+  --red: #8C1515;          /* Stanford cardinal */
+  --red-dark: #6d1010;
+  --ink: #1f2328;
+  --muted: #667085;
+  --light: #98a2b3;
+  --line: #e6e8ec;
+  --soft: #faf6f5;
+  --gold: #b58500;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+  color: var(--ink);
+  background: #fff;
+}
+a { color: var(--red); text-decoration: underline; text-decoration-color: rgba(140, 21, 21, 0.30); text-underline-offset: 2px; }
+a:hover { text-decoration-color: var(--red); }
+
+/* ---------- layout ---------- */
+.layout {
+  max-width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr);
+  column-gap: 52px; row-gap: 0;
+  padding: 34px 0 60px;
+}
+.sidecol { position: sticky; top: 22px; align-self: start; }
+/* two-column desktop: sidebar spans both rows, nav sits above the content */
+@media (min-width: 901px) {
+  .sidecol { grid-column: 1; grid-row: 1 / span 2; }
+  .nav { grid-column: 2; grid-row: 1; }
+  main { grid-column: 2; grid-row: 2; }
+}
+.side img.portrait { width: 100%; max-width: 232px; border-radius: 12px; display: block; }
+.side .name { font-size: 1.35rem; font-weight: 650; margin-top: 14px; letter-spacing: -0.01em; }
+.side .title { color: var(--muted); font-size: 0.93rem; margin-top: 3px; line-height: 1.45; }
+.side .title a { text-decoration-color: rgba(140,21,21,.25); }
+.side .themes {
+  margin-top: 12px; font-size: 0.86rem; color: var(--ink);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 9px 0; line-height: 1.5;
+}
+.side .themes b { color: var(--red-dark); font-weight: 650; display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 3px; }
+.side .where { margin-top: 11px; font-size: 0.86rem; color: var(--muted); line-height: 1.5; }
+
+/* icon row */
+.iconrow { display: flex; gap: 14px; margin-top: 13px; align-items: center; }
+.iconrow a { display: inline-flex; color: var(--red); text-decoration: none; }
+.iconrow svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+.iconrow a:hover { color: var(--red-dark); }
+
+/* news box in sidebar */
+.newsbox {
+  margin-top: 18px; border: 1px solid var(--line); border-radius: 9px;
+  background: #fcfcfd; overflow: hidden;
+}
+.newsbox .hd {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--red-dark); padding: 8px 12px 6px; border-bottom: 1px solid var(--line); background: #fff;
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.newsbox .hd a { font-size: 0.68rem; text-decoration: none; font-weight: 600; }
+.newsbox .body { max-height: 300px; overflow-y: auto; padding: 8px 12px 10px; }
+.newsbox .it { font-size: 0.82rem; line-height: 1.45; padding: 6px 0; border-bottom: 1px dotted var(--line); }
+.newsbox .it:last-child { border-bottom: none; }
+.newsbox .it .d { color: var(--light); font-size: 0.75rem; display: block; }
+
+main { min-width: 0; }
+
+/* ---------- nav (right aligned; collapses to a tap-to-open menu on phones) ---------- */
+.nav { margin-bottom: 22px; }
+.navlinks {
+  display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+.navlinks a { color: var(--muted); text-decoration: none; font-weight: 600; letter-spacing: 0.01em; }
+.navlinks a:hover { color: var(--red); }
+.navlinks a.active { color: var(--red); }
+.navbtn { display: none; }
+/* News rides in the phone menu only; the desktop row is unchanged */
+.navlinks .navnews { display: none; }
+
+/* a hidden checkbox drives the phone menu — no JS on the site */
+.toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* ---------- type ---------- */
+h1 { font-size: 2rem; font-weight: 650; letter-spacing: -0.01em; margin-bottom: 10px; }
+h2 {
+  font-size: 1.02rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--red-dark); margin: 2em 0 0.55em;
+}
+h3 { font-size: 1.06rem; font-weight: 700; margin: 1.1em 0 0.3em; }
+p { margin: 0.6em 0; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9em; }
+.tagline { font-style: italic; color: var(--muted); font-size: 1.05rem; }
+.bigq { margin-top: 8px; font-weight: 600; }
+
+.notice {
+  background: var(--soft); border-left: 3px solid var(--red); border-radius: 8px;
+  padding: 13px 18px; margin: 0 0 20px;
+}
+.notice p { margin: 0.25em 0; }
+.notice .lead { font-weight: 650; }
+
+/* ---------- home research overview (2x2 cards) ---------- */
+.ovgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.ovcard { border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px 14px; background: #fff; }
+.ovcard h3 { margin: 0 0 3px; font-size: 1.0rem; }
+.ovcard h3 a { text-decoration: none; }
+.ovcard h3 a:hover { text-decoration: underline; }
+.ovcard .scope { color: var(--muted); font-size: 0.9rem; margin: 0 0 9px; line-height: 1.5; }
+.ovcard ul { list-style: none; margin: 0; }
+.ovcard li { font-size: 0.87rem; margin: 5px 0; line-height: 1.45; }
+.ovcard .ur {
+  margin: 9px 0 0; padding-top: 8px; border-top: 1px dotted var(--line);
+  font-size: 0.83rem; color: var(--light); line-height: 1.45;
+}
+
+/* ---------- research ---------- */
+.theme { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin: 16px 0; }
+.theme h3 { margin-top: 0; }
+.theme .q { color: var(--muted); font-style: italic; margin-bottom: 0.5em; }
+.theme ul.papers { margin: 10px 0 6px 1.05em; }
+.theme ul.papers li { margin: 6px 0; font-size: 0.94rem; }
+.badge {
+  display: inline-block; background: var(--red); color: #fff;
+  font-size: 0.72rem; font-weight: 700; border-radius: 4px;
+  padding: 1px 7px; margin-right: 6px; vertical-align: 1px; white-space: nowrap;
+}
+.badge.gold { background: var(--gold); }
+.kw { color: var(--light); font-size: 0.86rem; margin-top: 8px; }
+.todo {
+  background: #fffbeb; border: 1px dashed #d9b44a; border-radius: 6px;
+  padding: 7px 12px; font-size: 0.88rem; color: #7a6420; margin: 7px 0;
+}
+figure { margin: 22px 0 4px; text-align: center; }
+figure svg, figure img { max-width: 100%; height: auto; }
+
+/* ---------- publications ---------- */
+.yearhead { font-size: 1rem; font-weight: 700; color: var(--red-dark); margin: 26px 0 4px; border-bottom: 1px solid var(--line); padding-bottom: 4px; letter-spacing: 0.04em; }
+.pub { margin: 12px 0; font-size: 0.94rem; }
+.pub .t { font-weight: 650; }
+.pub .a { color: var(--muted); }
+.pub .v { font-style: italic; color: var(--muted); }
+.pub .v b { font-style: normal; color: var(--ink); }
+.pub .me { font-weight: 700; color: var(--ink); }
+.pub .me.lead { text-decoration: underline; text-decoration-color: rgba(140,21,21,.5); }
+.award-inline { color: var(--red); font-weight: 700; font-size: 0.88em; }
+
+/* ---------- lists (service / awards / news page) ---------- */
+.rows { margin: 4px 0 2px; }
+.row { display: flex; gap: 14px; padding: 4px 0; font-size: 0.94rem; border-bottom: 1px dotted var(--line); }
+.row:last-child { border-bottom: none; }
+.row .yr { flex: 0 0 108px; color: var(--light); font-size: 0.86rem; }
+.row .txt { flex: 1; }
+.row .txt i { color: var(--muted); }
+
+.news-list { list-style: none; }
+.news-list li { display: flex; gap: 12px; margin: 9px 0; align-items: baseline; }
+.news-date { flex: 0 0 92px; color: var(--light); font-size: 0.86rem; }
+.news-tag {
+  flex: 0 0 auto; font-size: 0.68rem; font-weight: 700; border-radius: 4px;
+  padding: 1px 7px; color: #fff; background: var(--red); letter-spacing: 0.03em;
+}
+.news-tag.award { background: var(--gold); }
+.news-tag.service { background: var(--muted); }
+.news-body { flex: 1; font-size: 0.95rem; }
+
+.student { margin: 7px 0; font-size: 0.94rem; }
+.student .place { color: var(--muted); }
+.student .venues { color: var(--light); font-size: 0.86rem; }
+
+footer { border-top: 1px solid var(--line); }
+footer .inner { max-width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 16px 0; color: var(--light); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 22px; }
+  /* .side and .newsbox become items of .layout, so news can be ordered past main */
+  .sidecol { display: contents; }
+  .side { position: static; display: grid; grid-template-columns: 130px 1fr; column-gap: 18px; row-gap: 4px; align-items: start; order: 1; }
+  .side img.portrait { max-width: 130px; grid-column: 1; grid-row: 1 / span 4; }
+  .side .name, .side .title, .side .iconrow { grid-column: 2; }
+  .side .themes, .side .where { grid-column: 1 / -1; }
+  main { order: 2; }
+  .newsbox { order: 3; margin-top: 0; }
+  /* stacked above the content, research themes and the postal address are just
+     the home page repeating itself — the mail icon still carries the address */
+  body.sub .side .themes, body.sub .side .where { display: none; }
+  body.sub .side { padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .newsbox .body { max-height: 260px; }
+  .nav { order: 0; margin-bottom: 0; }
+  .navlinks { justify-content: flex-start; }
+}
+
+/* phones: the nav becomes an icon menu pinned to the top-right corner,
+   and the news box gives way to the News entry inside that menu */
+@media (max-width: 700px) {
+  .nav { position: relative; display: flex; justify-content: flex-end; }
+  .navbtn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 38px; cursor: pointer;
+    -webkit-user-select: none; user-select: none;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--red);
+  }
+  .navbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .navbtn .ico-close { display: none; }
+  #navtoggle:checked ~ .navbtn .ico-open { display: none; }
+  #navtoggle:checked ~ .navbtn .ico-close { display: block; }
+  #navtoggle:focus-visible ~ .navbtn { outline: 2px solid var(--red); outline-offset: 2px; }
+
+  .navlinks { display: none; }
+  #navtoggle:checked ~ .navlinks {
+    display: block; position: absolute; top: calc(100% + 6px); right: 0; z-index: 20;
+    min-width: 190px; padding: 0; overflow: hidden;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(31, 35, 40, 0.13);
+  }
+  #navtoggle:checked ~ .navlinks a,
+  #navtoggle:checked ~ .navlinks .navnews { display: block; padding: 11px 14px; border-top: 1px solid var(--line); }
+  #navtoggle:checked ~ .navlinks a:first-child { border-top: none; }
+
+  .newsbox { display: none; }
+}
+@media (max-width: 520px) {
+  body { font-size: 15.5px; }
+  .layout { max-width: calc(100% - 32px); padding-top: 22px; }
+  .side { grid-template-columns: 100px 1fr; gap: 14px; }
+  .side img.portrait { max-width: 100px; border-radius: 10px; }
+  .side .name { font-size: 1.15rem; margin-top: 0; }
+  h1 { font-size: 1.6rem; }
+  .news-list li, .row { flex-wrap: wrap; gap: 6px; }
+  .news-date, .row .yr { flex: 0 0 auto; }
+  .news-body, .row .txt { flex: 1 1 100%; }
+  .theme { padding: 14px; }
+  .notice { padding: 12px 14px; }
+}
+
+.row .yr2 { flex: 0 0 210px; color: var(--red-dark); font-weight: 650; font-size: 0.9rem; }
+@media (max-width: 520px) { .row .yr2 { flex: 0 0 auto; } }
+
+.badge.ur { background: #98a2b3; }
+.hinge {
+  color: var(--muted); font-style: italic; text-align: center;
+  font-size: 0.95rem; margin: 16px 6% 4px; line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .ovgrid { grid-template-columns: 1fr; }
+  .hinge { margin: 14px 0 2px; text-align: left; }
+}
+
+/* ---------- paper chips (short name + venue) ---------- */
+.ptags { display: flex; flex-wrap: wrap; gap: 7px; margin: 4px 0 2px; }
+.ptag {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 2px 4px 2px 11px; font-size: 0.85rem; line-height: 1.7;
+  color: var(--ink); text-decoration: none; background: #fff;
+}
+.ptag b {
+  background: var(--red); color: #fff; border-radius: 999px;
+  padding: 1px 9px; font-size: 0.71rem; font-weight: 700; letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.ptag:hover { border-color: var(--red); }
+.ptag.gold b { background: var(--gold); }
+.ptag.nolink { color: var(--muted); }
+.ptag.nolink:hover { border-color: var(--line); }
+.theme .ptags { margin-top: 12px; }
+@media (max-width: 520px) { .ptag { font-size: 0.82rem; align-items: baseline; } }
+
+/* ---------- selected venue counts ---------- */
+.venueline {
+  border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 8px;
+  background: #fcfcfd; padding: 9px 13px; font-size: 0.86rem; line-height: 1.9; color: var(--muted);
+}
+.venueline .vl-hd {
+  display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--red-dark); margin-right: 8px;
+}
+.venueline b { color: var(--ink); font-weight: 650; }
+
+/* ---------- related papers line ---------- */
+.related { font-size: 0.88rem; line-height: 1.75; margin: 8px 0 0; color: var(--ink); }
+.related .rp { color: var(--muted); font-weight: 650; }
+.related a { text-decoration-color: rgba(140,21,21,.28); }
+.theme .related { margin-top: 12px; font-size: 0.92rem; }
+.ovcard .related { font-size: 0.86rem; }
+
+/* ---------- research questions list (About) ---------- */
+.qlist { list-style: none; margin: 10px 0 12px; }
+.qlist li { position: relative; padding-left: 18px; margin: 5px 0; font-size: 0.97rem; }
+.qlist li::before {
+  content: ""; position: absolute; left: 2px; top: 0.62em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--red);
+}
+
+/* ---------- awards: a small trophy replaces the star everywhere ---------- */
+.trophy { width: 0.95em; height: 0.95em; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.12em; margin: 0 2px 0 5px; }
+.aw { color: var(--red); font-weight: 650; font-size: 0.86em; }
+.award-inline .trophy { margin-left: 0; }
+
+/* ---------- home: three method cards in a row + Translational AI Systems band ---------- */
+.ovgrid.ovgrid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.domband { border: 1px solid var(--line); border-radius: 10px; padding: 15px 17px 8px; margin-top: 16px; background: #fff; }
+.domband h3 { margin: 0 0 6px; font-size: 1.0rem; }
+.drow { display: grid; grid-template-columns: 178px 1fr; gap: 6px 14px; align-items: start; padding: 9px 0; border-top: 1px solid var(--line); }
+.drow:first-of-type { border-top: none; padding-top: 4px; }
+.dlab { display: flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-dark); padding-top: 3px; line-height: 1.3; }
+.dlab svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: var(--red); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips.repos { margin-top: 6px; }
+.chip { display: inline-flex; align-items: baseline; gap: 5px; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; font-size: 0.82rem; font-weight: 600; color: var(--ink); text-decoration: none; background: #fff; line-height: 1.5; white-space: nowrap; }
+.chip span { color: var(--muted); font-weight: 500; font-size: 0.74rem; }
+.chip .trophy { margin: 0 0 0 1px; align-self: center; }
+a.chip:hover { border-color: var(--red); color: var(--red); }
+.chip.repo { background: #fffbea; border-color: #ead9a0; align-items: center; }
+.chip.repo svg { width: 13px; height: 13px; fill: var(--ink); margin-right: 1px; }
+.chip.repo span { color: var(--gold); font-weight: 600; }
+@media (max-width: 900px) {
+  .ovgrid.ovgrid3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .drow { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* ---------- story: sidebar closing line, card venue lines, method-line markers on chips ---------- */
+.side .themes .toward { display: block; margin-top: 5px; color: var(--red-dark); font-style: italic; }
+.ovcard .related .rp { color: var(--muted); font-weight: 600; }
+.ovcard .venues { color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin: 6px 0 0; }
+.domband .scope { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; line-height: 1.5; }
+.domband .legend { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-left: 10px; font-size: 0.74rem; color: var(--muted); vertical-align: 1px; }
+.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 1px; }
+.l-a { --lc: var(--red); } .l-b { --lc: #2f6f9f; } .l-c { --lc: #3a7d44; } .l-d { --lc: #98a2b3; }
+.sw { background: var(--lc); }
+.chip.l-a, .chip.l-b, .chip.l-c, .chip.l-d { border-left: 3px solid var(--lc); }
+.chip.pillar { font-weight: 700; }
+@media (max-width: 700px) {
+  .domband .legend { display: flex; margin: 4px 0 0; }
+}
+
+/* ---- 2026-09-24: method cards as click-to-expand panels (no JS: radio + label) ---- */
+.pillars input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+.pillcard { cursor: pointer; display: block; transition: border-color .15s, box-shadow .15s; }
+.pillcard:hover { border-color: var(--red); box-shadow: 0 1px 0 rgba(140,21,21,.15); }
+.pillcard .more { display: inline-block; margin-top: 8px; font-size: 0.8rem; font-weight: 600; color: var(--red); }
+.pillcard .more::after { content: " \25BE"; }
+.ppanel { display: none; border: 1px solid var(--red); border-radius: 10px; padding: 14px 17px 12px; margin-top: 12px; background: #fff; }
+.ppanel .pp-x { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ppanel h3 { margin: 0; font-size: 1.0rem; }
+.pp-close { cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.pp-close:hover { color: var(--red); }
+.pp-text { color: var(--ink); font-size: 0.9rem; line-height: 1.6; margin: 6px 0 10px; }
+.pgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; }
+.pcard { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px 6px; background: var(--soft); min-width: 0; }
+.pc-hd { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 7px; font-size: 0.86rem; }
+.pc-name { font-weight: 650; }
+.pc-name a { text-decoration-color: rgba(140,21,21,.28); }
+.pc-v { color: var(--muted); font-size: 0.76rem; font-weight: 600; }
+.pc-hd .trophy { align-self: center; }
+.pc-hd .aw { font-size: 0.74rem; }
+.pc-t { color: var(--muted); font-size: 0.76rem; line-height: 1.4; margin-top: 2px; }
+#pill-t1:checked ~ #panel-t1, #pill-t2:checked ~ #panel-t2, #pill-t3:checked ~ #panel-t3 { display: block; }
+#pill-t1:checked ~ .ovgrid label[for="pill-t1"], #pill-t2:checked ~ .ovgrid label[for="pill-t2"], #pill-t3:checked ~ .ovgrid label[for="pill-t3"] { border-color: var(--red); background: var(--soft); }
+#pill-t1:checked ~ .ovgrid label[for="pill-t1"] .more::after, #pill-t2:checked ~ .ovgrid label[for="pill-t2"] .more::after, #pill-t3:checked ~ .ovgrid label[for="pill-t3"] .more::after { content: " \25B4"; }
+@media (max-width: 900px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .pgrid { grid-template-columns: 1fr; } }
+@media print { .ppanel { display: block !important; } .pillcard .more, .pp-close { display: none; } }
+
+/* ---- 2026-09-24 (later): "Selected papers" captions, Translational AI Systems as a wide card + panel, line tags on its cards ---- */
+.pillcard.wide { margin-top: 12px; }
+.pp-cap { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.78rem; color: var(--muted); margin: -4px 0 10px; }
+.pp-cap .legend { display: inline-flex; flex-wrap: wrap; gap: 4px 6px; margin-left: auto; }
+.ltag { display: inline-block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; background: var(--lc, var(--muted)); border-radius: 4px; padding: 1px 6px; line-height: 1.5; vertical-align: 1px; white-space: nowrap; }
+.pc-hd .ltag { margin-left: auto; align-self: center; }
+.pcard.l-a, .pcard.l-b, .pcard.l-c, .pcard.l-d { border-top: 3px solid var(--lc); }
+.dgroup { padding: 8px 0 2px; }
+.dgroup + .dgroup { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 12px; }
+.dgroup .dlab { margin-bottom: 7px; }
+.dgroup .chips.repos { margin-top: 8px; }
+#pill-t4:checked ~ #panel-t4 { display: block; }
+#pill-t4:checked ~ label[for="pill-t4"] { border-color: var(--red); background: var(--soft); }
+#pill-t4:checked ~ label[for="pill-t4"] .more::after { content: " \25B4"; }
+@media (max-width: 700px) { .pp-cap .legend { margin-left: 0; } }
+
+/* ---- 2026-09-25: Translational AI Systems badge, cards without prose, fixed three-row paper cards ---- */
+.tas { display: inline-block; padding: 0 7px; border-radius: 6px; background: #f7ecec; border: 1px solid rgba(140,21,21,.28); color: var(--red-dark); font-weight: 650; line-height: 1.45; white-space: nowrap; }
+.pillcard h3 { margin-bottom: 6px; }
+.pillcard .venues { margin-top: 4px; }
+.pillcard .more::after { content: " \25BE"; }
+.pc-r1 { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; font-size: 0.86rem; }
+.pc-r1 .pc-name { font-weight: 650; min-width: 0; }
+.pc-r1 .ltag { flex: 0 0 auto; margin-top: 2px; }
+.pc-r2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin-top: 1px; font-size: 0.78rem; }
+.pc-r2 .pc-v { color: var(--muted); font-weight: 600; letter-spacing: 0.01em; }
+.pc-r2 .trophy { align-self: center; margin-left: 0; }
+.pc-r2 .aw { font-size: 0.74rem; }
+.pc-gh { display: inline-flex; align-items: center; gap: 4px; color: var(--ink); font-size: 0.72rem; font-weight: 600; text-decoration: none; border: 1px solid #ead9a0; background: #fffbea; border-radius: 5px; padding: 0 6px; line-height: 1.6; }
+.pc-gh svg { width: 11px; height: 11px; fill: var(--ink); }
+.pc-gh:hover { border-color: var(--gold); }
+.pcard .pc-t { margin-top: 3px; }
+.pc-r1 .pc-name { flex: 1 1 auto; }
+.pc-r1 .ltag { flex: 0 1 auto; max-width: 52%; white-space: normal; text-align: center; line-height: 1.3; font-size: 0.6rem; padding: 1px 5px; }
+
+/* ---- 2026-09-25 (later): cards toggle open/closed by clicking (two overlay labels), phrase styling ---- */
+.tas { display: inline; padding: 0; border: none; background: none; white-space: normal; font-style: normal; font-weight: 700; font-variant: small-caps; letter-spacing: 0.06em; font-size: 1.12em; color: var(--red); }
+.pillcard { position: relative; }
+.pillcard .hit { position: absolute; inset: 0; cursor: pointer; z-index: 2; border-radius: inherit; }
+.pillcard .hit-close, .pillcard .m-close { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .hit-open, #pill-t2:checked ~ .ovgrid #t2 .hit-open, #pill-t3:checked ~ .ovgrid #t3 .hit-open, #pill-t4:checked ~ #t4 .hit-open { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .hit-close, #pill-t2:checked ~ .ovgrid #t2 .hit-close, #pill-t3:checked ~ .ovgrid #t3 .hit-close, #pill-t4:checked ~ #t4 .hit-close { display: block; }
+#pill-t1:checked ~ .ovgrid #t1 .m-open, #pill-t2:checked ~ .ovgrid #t2 .m-open, #pill-t3:checked ~ .ovgrid #t3 .m-open, #pill-t4:checked ~ #t4 .m-open { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .m-close, #pill-t2:checked ~ .ovgrid #t2 .m-close, #pill-t3:checked ~ .ovgrid #t3 .m-close, #pill-t4:checked ~ #t4 .m-close { display: inline; }
+#pill-t1:checked ~ .ovgrid #t1, #pill-t2:checked ~ .ovgrid #t2, #pill-t3:checked ~ .ovgrid #t3, #pill-t4:checked ~ #t4 { border-color: var(--red); background: var(--soft); }
+#pill-t1:checked ~ .ovgrid #t1 .more::after, #pill-t2:checked ~ .ovgrid #t2 .more::after, #pill-t3:checked ~ .ovgrid #t3 .more::after, #pill-t4:checked ~ #t4 .more::after { content: " \25B4"; }
