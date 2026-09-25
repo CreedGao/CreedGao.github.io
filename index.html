@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=cae2c12a">
+<link rel="stylesheet" href="assets/style.css?v=4eda94a5">
 </head>
 <body>
 <div class="layout">
@@ -63,15 +63,15 @@ Competitiveness</a>, working with
 I was previously an Associate Research Scientist at Columbia University, and I received my Ph.D.
 in Computer Science from the University of Virginia in 2024, advised by
 <a href="https://www.cs.virginia.edu/~bjc8c/" target="_blank">Prof. Bradford Campbell</a>. My
-research aims at translational AI systems: AI that holds up in hospitals, buildings and power
-grids, financial markets, and the platforms people use every day. Three things have to be true before
-that is possible:</p>
+research aims at <b class="tas">translational AI systems</b>: AI that holds up in hospitals, buildings,
+financial markets, and the platforms people use every day, built and tested with the clinicians, building
+engineers, developers, and platform teams who run them. Three things have to be true before that is
+possible:</p>
 
 <ul class="qlist">
   <li><b>Trustworthy generation and agents</b></li>
   <li><b>Alignment at large scale</b></li>
   <li><b>Privacy-preserving and efficient learning</b></li>
-  <li><b>Translational AI systems:</b> with the three in place, I put them to the test with clinicians, building engineers, developers, and platform teams: clinical reports and sensing in hospitals, buildings and grids, financial markets and open source, generated software, and recommendation platforms serving hundreds of millions of people.</li>
 </ul>
 
 <p>My work appears at ICML, NeurIPS, ICLR,
@@ -87,24 +87,27 @@ ecosystem and organize the
 <div class="pillars">
 <input type="radio" name="pill" id="pill-none" checked><input type="radio" name="pill" id="pill-t1"><input type="radio" name="pill" id="pill-t2"><input type="radio" name="pill" id="pill-t3"><input type="radio" name="pill" id="pill-t4">
 <div class="ovgrid ovgrid3">
-<label class="ovcard pillcard" for="pill-t1" id="t1">
+<div class="ovcard pillcard" id="t1">
   <h3>Trustworthy Generation &amp; Agents</h3>
   <p class="scope">When an AI writes code or drafts a medical report, someone has to be able to check it. I build generators that first work out what the result must look like, write within that frame, and then test and repair their own output; where nothing can be run to check an answer, I build the judge.</p>
   <p class="venues">NeurIPS &times;4 &middot; ICLR &middot; ICML &times;2 &middot; AAAI &times;2 &middot; WWW &middot; EMNLP Industry <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Nom.</span>, etc.</p>
-  <span class="more">Selected papers</span>
-</label>
-<label class="ovcard pillcard" for="pill-t2" id="t2">
+  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
+  <label class="hit hit-open" for="pill-t1" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
+</div>
+<div class="ovcard pillcard" id="t2">
   <h3>Alignment at Large Scale</h3>
   <p class="scope">One model often has to learn from many kinds of data at once: images and text, different groups of users, many kinds of labels. I develop methods that keep these sources in balance so that none drowns out another, and that still hold up on platforms with hundreds of millions of users.</p>
   <p class="venues">NeurIPS &middot; ICML &middot; KDD &times;2 &middot; ACM MM &times;3 <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (top 4%)</span> &middot; SIGIR &middot; CVPR, etc.</p>
-  <span class="more">Selected papers</span>
-</label>
-<label class="ovcard pillcard" for="pill-t3" id="t3">
+  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
+  <label class="hit hit-open" for="pill-t2" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
+</div>
+<div class="ovcard pillcard" id="t3">
   <h3>Privacy-Preserving &amp; Efficient Learning</h3>
   <p class="scope">Some data cannot leave the hospital, the building or the phone, and the devices there have little computing power. I design learning methods that work where the data lives, with privacy protection and energy cost built into the design rather than added afterwards.</p>
   <p class="venues">NPJ AI &middot; ICCPS &middot; IPDPS &middot; IEEE TSC, etc.</p>
-  <span class="more">Selected papers</span>
-</label>
+  <span class="more"><span class="m-open">Selected papers</span><span class="m-close">Hide papers</span></span>
+  <label class="hit hit-open" for="pill-t3" aria-label="Show selected papers"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers"></label>
+</div>
 </div>
 <div class="ppanel" id="panel-t1">
   <div class="pp-x"><h3>Trustworthy Generation &amp; Agents</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
@@ -151,13 +154,14 @@ ecosystem and organize the
 <div class="pcard"><div class="pc-hd"><span class="pc-name"><a href="assets/papers/Task-failure-prediction-in-cloud-data-centers-using-deep-lea.pdf">Task failure</a></span><span class="pc-v">IEEE TSC&#x27;20</span></div><div class="pc-t">Task failure prediction in cloud data centers using deep learning</div></div>
   </div>
 </div>
-<label class="ovcard pillcard wide" for="pill-t4" id="t4">
+<div class="ovcard pillcard wide" id="t4">
   <h3>Translational AI Systems</h3>
   <p class="scope">Where the three lines above are put to the test.</p>
   <p class="venues">Healthcare &middot; Buildings, Energy &amp; Infrastructure &middot; Finance &amp; Open Source &middot; Software Engineering &middot; Platforms &amp; Media</p>
   <p class="venues"><svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Nom.</span> EMNLP Ind.&#x27;25 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (13.3%)</span> CHIL&#x27;23 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Best Paper Cand.</span> BuildSys&#x27;24 &middot; <svg class="trophy" viewBox="0 0 24 24" aria-label="award"><path d="M7 4h10v3a5 5 0 0 1-10 0V4z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 12v4M8.5 20h7M10 16h4v4h-4z"/></svg><span class="aw">Oral (top 4%)</span> ACM MM&#x27;25</p>
-  <span class="more">Selected papers by domain</span>
-</label>
+  <span class="more"><span class="m-open">Selected papers by domain</span><span class="m-close">Hide papers</span></span>
+  <label class="hit hit-open" for="pill-t4" aria-label="Show selected papers by domain"></label><label class="hit hit-close" for="pill-none" aria-label="Hide selected papers by domain"></label>
+</div>
 <div class="ppanel" id="panel-t4">
   <div class="pp-x"><h3>Translational AI Systems</h3><label class="pp-close" for="pill-none" title="Close">Close &times;</label></div>
   <p class="pp-text">The three lines are put to the test with the people who run the systems: clinicians, building engineers, developers, platform teams, and the open-source finance community. Each paper is tagged with the line it advances.</p>
