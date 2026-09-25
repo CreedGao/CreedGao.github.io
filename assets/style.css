@@ -410,7 +410,7 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 .pc-r1 .ltag { flex: 0 1 auto; max-width: 52%; white-space: normal; text-align: center; line-height: 1.3; font-size: 0.6rem; padding: 1px 5px; }
 
 /* ---- 2026-09-25 (later): cards toggle open/closed by clicking (two overlay labels), phrase styling ---- */
-.tas { display: inline; padding: 0; border: none; background: none; white-space: normal; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 600; font-size: 1.12em; color: var(--red); letter-spacing: 0.005em; }
+.tas { display: inline; padding: 0; border: none; background: none; white-space: normal; font-style: italic; font-weight: 700; font-size: 1.06em; color: var(--red); }
 .pillcard { position: relative; }
 .pillcard .hit { position: absolute; inset: 0; cursor: pointer; z-index: 2; border-radius: inherit; }
 .pillcard .hit-close, .pillcard .m-close { display: none; }
