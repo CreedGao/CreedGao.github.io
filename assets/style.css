@@ -408,3 +408,15 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 .pcard .pc-t { margin-top: 3px; }
 .pc-r1 .pc-name { flex: 1 1 auto; }
 .pc-r1 .ltag { flex: 0 1 auto; max-width: 52%; white-space: normal; text-align: center; line-height: 1.3; font-size: 0.6rem; padding: 1px 5px; }
+
+/* ---- 2026-09-25 (later): cards toggle open/closed by clicking (two overlay labels), phrase styling ---- */
+.tas { display: inline; padding: 0; border: none; background: none; white-space: normal; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 600; font-size: 1.12em; color: var(--red); letter-spacing: 0.005em; }
+.pillcard { position: relative; }
+.pillcard .hit { position: absolute; inset: 0; cursor: pointer; z-index: 2; border-radius: inherit; }
+.pillcard .hit-close, .pillcard .m-close { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .hit-open, #pill-t2:checked ~ .ovgrid #t2 .hit-open, #pill-t3:checked ~ .ovgrid #t3 .hit-open, #pill-t4:checked ~ #t4 .hit-open { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .hit-close, #pill-t2:checked ~ .ovgrid #t2 .hit-close, #pill-t3:checked ~ .ovgrid #t3 .hit-close, #pill-t4:checked ~ #t4 .hit-close { display: block; }
+#pill-t1:checked ~ .ovgrid #t1 .m-open, #pill-t2:checked ~ .ovgrid #t2 .m-open, #pill-t3:checked ~ .ovgrid #t3 .m-open, #pill-t4:checked ~ #t4 .m-open { display: none; }
+#pill-t1:checked ~ .ovgrid #t1 .m-close, #pill-t2:checked ~ .ovgrid #t2 .m-close, #pill-t3:checked ~ .ovgrid #t3 .m-close, #pill-t4:checked ~ #t4 .m-close { display: inline; }
+#pill-t1:checked ~ .ovgrid #t1, #pill-t2:checked ~ .ovgrid #t2, #pill-t3:checked ~ .ovgrid #t3, #pill-t4:checked ~ #t4 { border-color: var(--red); background: var(--soft); }
+#pill-t1:checked ~ .ovgrid #t1 .more::after, #pill-t2:checked ~ .ovgrid #t2 .more::after, #pill-t3:checked ~ .ovgrid #t3 .more::after, #pill-t4:checked ~ #t4 .more::after { content: " \25B4"; }
