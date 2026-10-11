@@ -420,3 +420,25 @@ a.chip:hover { border-color: var(--red); color: var(--red); }
 #pill-t1:checked ~ .ovgrid #t1 .m-close, #pill-t2:checked ~ .ovgrid #t2 .m-close, #pill-t3:checked ~ .ovgrid #t3 .m-close, #pill-t4:checked ~ #t4 .m-close { display: inline; }
 #pill-t1:checked ~ .ovgrid #t1, #pill-t2:checked ~ .ovgrid #t2, #pill-t3:checked ~ .ovgrid #t3, #pill-t4:checked ~ #t4 { border-color: var(--red); background: var(--soft); }
 #pill-t1:checked ~ .ovgrid #t1 .more::after, #pill-t2:checked ~ .ovgrid #t2 .more::after, #pill-t3:checked ~ .ovgrid #t3 .more::after, #pill-t4:checked ~ #t4 .more::after { content: " \25B4"; }
+
+/* ---- 2026-10-11: compact homepage so it fits one laptop screen (1440x900 and up) without scrolling; desktop only, other pages untouched.
+   Text size stays at the site default (16px); mainly spacing, the job-market banner, photo and News box height are reduced. ---- */
+@media (min-width: 901px) {
+body:not(.sub) .layout { grid-template-columns: 250px minmax(0, 1fr); column-gap: 40px; padding: 18px 0 10px; }
+body:not(.sub) .nav { margin-bottom: 10px; }
+body:not(.sub) .navlinks { padding-bottom: 8px; }
+body:not(.sub) .notice { padding: 5px 14px; margin: 0 0 4px; font-size: 0.9rem; }
+body:not(.sub) .notice p { margin: 0; }
+body:not(.sub) main h2 { margin: 0.9em 0 0.35em; }
+body:not(.sub) main p { margin: 0.45em 0; }
+body:not(.sub) .ovgrid { gap: 14px; margin-top: 10px; }
+body:not(.sub) .ovcard { padding: 12px 15px 11px; }
+body:not(.sub) .pillcard h3 { margin-bottom: 4px; }
+body:not(.sub) .pillcard.wide { margin-top: 10px; }
+body:not(.sub) .side img.portrait { max-width: 232px; }
+body:not(.sub) .side .name { margin-top: 10px; }
+.side .where { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 12px; }
+body:not(.sub) .newsbox { margin-top: 12px; }
+body:not(.sub) .newsbox .body { max-height: 280px; }
+body:not(.sub) footer .inner { padding: 6px 0; }
+}
