@@ -21,8 +21,8 @@
 <rect x="30" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
 <rect x="30" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
 <rect x="30" y="176" width="306" height="12" fill="#8C1515"/>
-<text x="183.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Trustworthy Generation &amp;</text>
-<text x="183.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Agents</text>
+<text x="183.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Trustworthy LLM Generation</text>
+<text x="183.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">and Agents</text>
 <text x="183.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Make the output itself checkable.</text>
 <circle cx="48" cy="230" r="2.6" fill="#c98b8b"/>
 <text x="60" y="234" font-size="11.5" fill="#2b3038">Verifiable multi-framework code</text>
@@ -37,7 +37,8 @@
 <rect x="357" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
 <rect x="357" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
 <rect x="357" y="176" width="306" height="12" fill="#8C1515"/>
-<text x="510.0" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Alignment at Industrial Scale</text>
+<text x="510.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Multimodal and Multi-Domain</text>
+<text x="510.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Representation Learning</text>
 <text x="510.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Test the method where its assumptions break.</text>
 <circle cx="375" cy="230" r="2.6" fill="#c98b8b"/>
 <text x="387" y="234" font-size="11.5" fill="#2b3038">ID and multimodal representation</text>
@@ -51,7 +52,7 @@
 <rect x="684" y="150" width="306" height="216" rx="10" fill="#fff" stroke="#e0c5c5"/>
 <rect x="684" y="150" width="306" height="38" rx="10" fill="#8C1515"/>
 <rect x="684" y="176" width="306" height="12" fill="#8C1515"/>
-<text x="837.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Privacy-Preserving &amp;</text>
+<text x="837.0" y="167" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Federated and</text>
 <text x="837.0" y="182" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Efficient Learning</text>
 <text x="837.0" y="208" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8C1515">Learn where the data and the compute actually are.</text>
 <circle cx="702" cy="230" r="2.6" fill="#c98b8b"/>
