@@ -442,3 +442,16 @@ body:not(.sub) .newsbox { margin-top: 12px; }
 body:not(.sub) .newsbox .body { max-height: 280px; }
 body:not(.sub) footer .inner { padding: 6px 0; }
 }
+
+/* ---- 2026-10-16: on narrow screens (one column) open each direction's panel right under the tapped card ---- */
+@media (max-width: 900px) {
+  .pillars { display: flex; flex-direction: column; }
+  .pillars > * { order: 10; }
+  .pillars > .ovgrid.ovgrid3 { display: contents; }
+  .pillars #t1 { order: 1; margin-top: 4px; }
+  .pillars #panel-t1 { order: 2; }
+  .pillars #t2 { order: 3; margin-top: 16px; }
+  .pillars #panel-t2 { order: 4; }
+  .pillars #t3 { order: 5; margin-top: 16px; }
+  .pillars #panel-t3 { order: 6; }
+}
